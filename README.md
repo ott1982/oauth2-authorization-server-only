@@ -2,8 +2,6 @@
 
 Minimal gradle project Springboot Oauth 2 Authorization Server.
 
-
-
 # Apendix
 
 ## Java KeyStore creation
@@ -13,5 +11,11 @@ keytool -genkey -v -keystore mykeystore.keystore -alias myalias -keyalg RSA -key
 keytool -v -list -keystore mykeystore.keystore -alias myalias
 ```
 
+## CURL get AccessToken
 
+```sh
+curl -X POST -u myclientid:myclientsecret http://localhost:8080/oauth/token \
+-H"content-type: application/x-www-form-urlencoded" \
+-d"grant_type=password&username=myusername&password=mypassword" | jq .
+```
 

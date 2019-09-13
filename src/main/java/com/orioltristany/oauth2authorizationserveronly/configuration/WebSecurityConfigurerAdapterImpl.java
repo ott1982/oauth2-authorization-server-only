@@ -13,16 +13,8 @@ public class WebSecurityConfigurerAdapterImpl extends WebSecurityConfigurerAdapt
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		super.configure(http);
 		logger.trace("configure-HttpSecurity");
-		http.authorizeRequests().antMatchers("/oauth/revoke**", "/inmemoryapplicationscontroller**").anonymous()
-				.anyRequest().authenticated();
-	}
+		http.authorizeRequests().anyRequest().authenticated().and().formLogin().and().httpBasic();
 
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		super.configure(web);
-		logger.trace("configure-WebSecurity");
-		web.ignoring().antMatchers("/oauth/revoke**", "/inmemoryapplicationscontroller");
 	}
 }

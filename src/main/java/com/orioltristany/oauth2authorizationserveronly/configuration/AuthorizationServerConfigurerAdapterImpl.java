@@ -31,9 +31,9 @@ public class AuthorizationServerConfigurerAdapterImpl extends AuthorizationServe
 
 	@Autowired
 	public AuthorizationServerConfigurerAdapterImpl(
-			@Value("${com.orioltristany.oauth2authenticationserver.keystore.path}") String keystorePath,
-			@Value("${com.orioltristany.oauth2authenticationserver.keystore.alias}") String keystoreAlias,
-			@Value("${com.orioltristany.oauth2authenticationserver.keystore.password}") String keystorePassword,
+			@Value("${com.orioltristany.oauth2authorizationserver.keystore.path}") String keystorePath,
+			@Value("${com.orioltristany.oauth2authorizationserver.keystore.alias}") String keystoreAlias,
+			@Value("${com.orioltristany.oauth2authorizationserver.keystore.password}") String keystorePassword,
 			AuthenticationManager authenticationManager, UserDetailsService userDetailsService,
 			ClientDetailsServiceImpl clientDetailsService) {
 		super();
