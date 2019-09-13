@@ -14,7 +14,14 @@ repositories {
     jcenter()
 }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+dependencies {	
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.RELEASE'
+	}
 }
